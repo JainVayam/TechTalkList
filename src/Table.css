@@ -1,0 +1,27 @@
+.Table {
+  margin-top: 5%;
+  width: 100%;
+}
+.Item-column {
+  text-align: left;
+  width: 80%;
+  padding-left: 5%;
+  font-size: 25px;
+  color: white;
+  font-weight: bold
+}
+
+.Table-rows {
+  background: #2718183d;
+}
+
+.Delete-btn {
+  width: 70%;
+  height: 25px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #f3173c;
+  background: #f5e808;
+  border: 2px solid;
+  border-color: #e1d83b;
+}

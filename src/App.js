@@ -1,24 +1,33 @@
 import React, { Component } from 'react';
+
 import './App.css';
+import TableComponent from './Table'
 
 class App extends Component {
   state = {
     inputValue : '',
-    addedItem: '',
+    addedItems: [],
   }
 
   handleInputChange = ( event ) => this.setState( { inputValue: event.target.value } )
 
   handleAddItem = ( ) => {
     const { state } = this
-    const { inputValue } = state
-    this.setState( { addedItem: inputValue, inputValue: '' } )
-    // addedItems.push( inputValue )
-    // this.setState( { addedItems, inputValue: ''  } )
+    const { addedItems, inputValue } = state
+    addedItems.push( inputValue )
+    this.setState( { addedItems, inputValue: ''  } )
   }
+
+  deleteListItem = ( index ) => {
+    const { state } = this
+    const { addedItems } = state
+    addedItems.splice( index, 1 )
+    this.setState( { addedItems } )
+  } 
+
   render() {
-    const { state, handleInputChange, handleAddItem } = this
-    const { inputValue, addedItem } = state
+    const { state, handleInputChange, handleAddItem, deleteListItem } = this
+    const { inputValue, addedItems } = state
     return (
       <div className="App">
         <header className="App-header">
@@ -34,14 +43,14 @@ class App extends Component {
             <button
               className="Add-btn"
               onClick={ handleAddItem }
+              disabled={ inputValue === '' }
             >
-              Added Item
+              Add Item
             </button>
           </div>
-          <h2
-            clasName="Added-item">
-            The current item is : { addedItem }
-          </h2>   
+          <TableComponent
+            items={ addedItems } 
+            handleDelete={ deleteListItem }/>
       </div>
     );
   }
