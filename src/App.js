@@ -39,7 +39,7 @@ class App extends Component {
             </button>
           </div>
           <h2
-            clasName="Added-item">
+            className="Added-item">
             The current item is : { addedItem }
           </h2>   
       </div>
