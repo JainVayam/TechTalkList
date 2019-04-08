@@ -13,7 +13,7 @@ function Table ( props ) {
           className="Delete-btn"
           onClick={ () => props.handleDelete( index ) }  
         >
-          Remove Item
+          Remove
         </button>
       </td>
     </tr>
