@@ -4,19 +4,21 @@ import './Table.css'
 
 function Table ( props ) {
   const tableRenderer = ( items ) => items.map( ( item, index ) => (
-    <tr className="Table-rows">
-      <td className="Item-column">
-        { item }
-      </td>
-      <td>
-        <button
-          className="Delete-btn"
-          onClick={ () => props.handleDelete( index ) }  
-        >
-          Remove
-        </button>
-      </td>
-    </tr>
+    <tbody>
+      <tr className="Table-rows">
+        <td className="Item-column">
+          { item }
+        </td>
+        <td>
+          <button
+            className="Delete-btn"
+            onClick={ () => props.handleDelete( index ) }  
+          >
+            Remove
+          </button>
+        </td>
+      </tr>
+    </tbody>  
   ) )
 
   return (
