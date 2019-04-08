@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import './App.css';
-import TableComponent from './Table'
+import TableComponent from './Table.jsx'
 
 class App extends Component {
   state = {
